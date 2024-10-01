@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 import Header from "./components/Header";
 import './App.css';
+import Nav from "./components/Nav";
 
 const App = () => {
   const [names, setNames] = useState({ chat1: "", chat2: "" });
@@ -15,11 +16,13 @@ const App = () => {
 
   return (
     
-    <div className='flex flex-col w-screen h-screen border-8 overflow-hidden border-primary  '>
+    <div className='  sm:w-screen sm:h-screen border-8 sm:overflow-hidden border-primary  '>
       
-      <div className='flex flex-grow w-full h-full border-8 border-white rounded-lg'>
-        <div className='flex flex-grow w-full h-full border-4 border-secondary rounded-lg'>
-          <div className='flex flex-grow w-full h-full'>
+      <div className='    border-8 border-white rounded-lg'>
+        <div className='   border-4 border-secondary rounded-lg'>
+    
+          <div className='  '>
+    
             {!isLoggedIn ? (
               <Login onSetNames={handleSetNames} />
             ) : (
@@ -31,7 +34,7 @@ const App = () => {
       
         </div>
       <div>
-      <Header/>
+   
       </div>
      
       </div>

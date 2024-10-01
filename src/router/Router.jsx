@@ -6,7 +6,7 @@ import Login from '../pages/Login'
 import ErrorPage from '../pages/ErrorPage'
 const Router = createBrowserRouter([
     {
-      path: "/",
+      path: "/app",
       element: <App />,
       errorElement: <ErrorPage />,
     },

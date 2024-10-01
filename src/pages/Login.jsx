@@ -17,7 +17,8 @@ const Login = ({ onSetNames }) => {
   };
 
   return (
-    <div className="flex flex-col items-center mx-auto mt-8">
+    <div className="flex flex-col  justify-between  gap-2 items-center mx-auto mt-8">
+       
       <h1 className="mt-2 m-5 text-4xl text-center">
         Watch and Chat
       </h1>
@@ -53,9 +54,11 @@ const Login = ({ onSetNames }) => {
         >
           Start Chat
         </button>
+  
       </div>
-     
-
+  <div className=" h-full   mx-16  sm:m-64 sm:w-full">
+      <Header/>
+      </div>
     </div>
   );
 };
