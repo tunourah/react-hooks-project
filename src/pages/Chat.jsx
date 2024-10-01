@@ -5,7 +5,6 @@ import { PiUserRectangleDuotone } from "react-icons/pi";
 import { Link, useNavigate } from "react-router-dom"; // use this hook to navigate between pages
 
 import TicTacToeSection from "../components/TicTacToeSection";
-import Nav from "../components/Nav";
 
 const Chat = ({ chat1Name, chat2Name }) => {
   const [messages, setMessages] = useState([]);
@@ -31,21 +30,20 @@ const Chat = ({ chat1Name, chat2Name }) => {
     }
   };
 
-   
-
   return (
-    <div className="flex flex-col sm:flex-row h-screen justify-between mx-5 items-center gap-3">
+    <div className="flex flex-col sm:flex-row h-screen justify-between mx-2 sm:mx-5 items-center gap-3">
       {/* Log Out Button */}
-      <div className=" relative right-40 sm:absolute sm:top-10  ">
-  <Link to="/">
-    <button className="bg-red-500 text-white p-2 rounded">
-      Log Out
-    </button>
-  </Link>
-</div>
+      <div className="relative mb-4 sm:absolute sm:top-10 sm:right-10">
+        <Link to="/">
+          <button className="bg-red-500 text-white p-2 rounded">
+            Log Out
+          </button>
+        </Link>
+      </div>
+
       {/* Chat 1 */}
-      <div className="flex flex-col h-screen justify-center items-center">
-        <div className="border-2 border-black w-full max-w-lg m-2 h-3/4 flex flex-col">
+      <div className="flex flex-col h-full w-full max-w-xs sm:max-w-lg sm:mt-36 mx-auto">
+        <div className="border-2 border-black h-3/4 flex flex-col">
           {/* Header with Chat 1 Name */}
           <div className="flex justify-between items-center p-3 bg-gray-100 border-b">
             <h1 className="font-bold text-lg flex justify-center items-center gap-2">
@@ -66,9 +64,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
                 }`}
               >
                 <div>
-                  {typeof message.text === "string"
-                    ? message.text
-                    : message.text}
+                  {typeof message.text === "string" ? message.text : message.text}
                 </div>
                 <div className="text-xs text-gray-500">{message.time}</div>
               </div>
@@ -76,7 +72,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
           </div>
 
           {/* Input Section for Chat 1 */}
-          <div className="flex items-center p-4 bg-custom border-t">
+          <div className="flex items-center p-4 bg-gray-50 border-t">
             <textarea
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
@@ -99,7 +95,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
                   }
                 }
               }}
-              className="flex-grow border border-black rounded p-2 mr-2"
+              className="flex-grow border border-black rounded p-2 mr-2 resize-none"
               rows={2}
             />
 
@@ -147,13 +143,13 @@ const Chat = ({ chat1Name, chat2Name }) => {
       </div>
 
       {/* Game Section */}
-      <div className="hoddin sm:block">
+      <div className="   w-full sm:w-1/3 h-3/4">
         <TicTacToeSection playerX={chat1Name} playerO={chat2Name} />
       </div>
 
       {/* Chat 2 */}
-      <div className="flex flex-col h-screen justify-center items-center">
-        <div className="border-2 border-black w-full max-w-lg m-2 h-3/4 flex flex-col">
+      <div className="flex flex-col h-full w-full max-w-xs  sm:mt-36 sm:max-w-lg mx-auto">
+        <div className="border-2 border-black h-3/4 flex flex-col">
           {/* Header with Chat 2 Name */}
           <div className="flex justify-between items-center p-3 bg-gray-100 border-b">
             <h1 className="font-bold text-lg flex justify-center items-center gap-2">
@@ -174,9 +170,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
                 }`}
               >
                 <div>
-                  {typeof message.text === "string"
-                    ? message.text
-                    : message.text}
+                  {typeof message.text === "string" ? message.text : message.text}
                 </div>
                 <div className="text-xs text-gray-500">{message.time}</div>
               </div>
@@ -184,7 +178,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
           </div>
 
           {/* Input Section for Chat 2 */}
-          <div className="flex items-center p-4 bg-custom border-t">
+          <div className="flex items-center p-4 bg-gray-50 border-t">
             <textarea
               value={inputText2}
               onChange={(e) => setInputText2(e.target.value)}
@@ -207,7 +201,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
                   }
                 }
               }}
-              className="flex-grow border border-black rounded p-2 mr-2"
+              className="flex-grow border border-black rounded p-2 mr-2 resize-none"
               rows={2}
             />
 
