@@ -1,8 +1,7 @@
 // App.js
 import React, { useState } from "react";
-import Header from "./components/Header"; // Assuming you still want the header
-import MainContainer from "./components/MainContainer"; // Import the new component
-import './App.css';
+import Header from "./components/Header";  
+import MainContainer from "./components/MainContainer";  
 
 const App = () => {
   const [names, setNames] = useState({ chat1: "", chat2: "" });
@@ -10,7 +9,7 @@ const App = () => {
 
   const handleSetNames = (chat1Name, chat2Name) => {
     setNames({ chat1: chat1Name, chat2: chat2Name });
-    setIsLoggedIn(true); // Switch to chat once names are set
+    setIsLoggedIn(true);  
   };
 
   return (

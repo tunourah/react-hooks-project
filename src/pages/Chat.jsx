@@ -40,7 +40,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
       {/* Log Out Button */}
       <div>
       <div className="relative mb-4 sm:absolute sm:top-10 sm:right-10">
-        <Link to="/">
+        <Link to="/MainContainer">
         <button
           className="bg-red-500 text-white p-2 rounded"
     
