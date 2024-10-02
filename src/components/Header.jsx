@@ -27,7 +27,7 @@ const Header = () => {
             <img src={image3} alt='profile' className='w-20 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             </div>
             <div>
-                <img src={image4} alt='profile' className='w-full h-10 transition-all duration-300 hover:w-24 hover:h-12' />
+                <img src={image4} alt='profile' className='w-40 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             </div>
           </div>
           </div>
