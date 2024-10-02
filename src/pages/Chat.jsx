@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { FaTimes, FaMinus, FaCog } from "react-icons/fa";
 import { FiSend, FiImage } from "react-icons/fi";
 import { PiUserRectangleDuotone } from "react-icons/pi";
-import { Link, useNavigate } from "react-router-dom"; // use this hook to navigate between pages
-
+import { Link } from "react-router-dom";  
+import ConfirmationModal from "../components/ConfirmationModal"; 
 import TicTacToeSection from "../components/TicTacToeSection";
 
 const Chat = ({ chat1Name, chat2Name }) => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
   const [inputText2, setInputText2] = useState("");
-  const navigate = useNavigate(); // React Router hook for redirection
+ 
 
   const handlePhotoUpload = (e, sender) => {
     const file = e.target.files[0];
@@ -29,20 +29,30 @@ const Chat = ({ chat1Name, chat2Name }) => {
       ]);
     }
   };
-
+   
   return (
-    <div className="flex flex-col sm:flex-row h-screen justify-between mx-2 sm:mx-5 items-center gap-3">
+    <div className=' h-secreen w-screen border-8 sm:overflow-hidden sm:h-full  border-primary'>
+      <div className='border-8 border-white   rounded-lg'>
+        <div className='border-4 border-secondary rounded-lg'>
+    <div className="flex flex-col sm:flex-row h-full sm:h-screen justify-between mx-2 sm:mx-5 items-center gap-3">
       {/* Log Out Button */}
+      <div>
       <div className="relative mb-4 sm:absolute sm:top-10 sm:right-10">
-        <Link to="/">
-          <button className="bg-red-500 text-white p-2 rounded">
-            Log Out
-          </button>
+        <Link to="/login">
+        <button
+          className="bg-red-500 text-white p-2 rounded"
+          
+        >
+          Log Out
+        </button>
         </Link>
       </div>
 
+     
+    </div>
+
       {/* Chat 1 */}
-      <div className="flex flex-col h-full w-full max-w-xs sm:max-w-lg sm:mt-36 mx-auto">
+      <div className="flex flex-col h-full w-full max-w-xs max-h-full sm:max-w-lg sm:mt-36 mx-auto">
         <div className="border-2 border-black h-3/4 flex flex-col">
           {/* Header with Chat 1 Name */}
           <div className="flex justify-between items-center p-3 bg-gray-100 border-b">
@@ -247,6 +257,9 @@ const Chat = ({ chat1Name, chat2Name }) => {
           </div>
         </div>
       </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 };

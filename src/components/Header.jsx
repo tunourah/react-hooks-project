@@ -3,6 +3,7 @@ import image from '../assets/Pasted Graphic.png';
 import image2 from '../assets/Pasted Graphic 1.png';  
 import image3 from '../assets/Pasted Graphic 2.png'; 
 import image4 from '../assets/Pasted Graphic 3.png';  
+import { Link } from 'react-router-dom';
 import { MdNotStarted } from "react-icons/md";
 
 const Header = () => {
@@ -13,28 +14,27 @@ const Header = () => {
           <h1>Play and Chat</h1>
           <p>By Nora Altuwaim</p>
         </div>
-        <div className='flex    justify-center items-center sm:items-strat gap-4  ' >
+        <div className='flex justify-center items-center sm:items-start gap-4 transition-all duration-300 ' >
             {/* left */}
           <div>
             {/* Use the imported image variable here */}
-            <img src={image} alt='profile' className='w-20 h-20' />
+            <img src={image} alt='profile' className='w-50 h-20 transition-all duration-300 hover:w-24 hover:h-24' />
           </div>
           {/* right */}
           <div>
-            <div className='flex gap-1'>
-            <img src={image2} alt='profile' className='w-10 h-10' />
-            <img src={image3} alt='profile' className='w-10 h-10' />
+            <div className='flex gap-1 w-full'>
+            <img src={image2} alt='profile' className='w-20 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
+            <img src={image3} alt='profile' className='w-20 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             </div>
             <div>
-                <img src={image4} alt='profile' className='w-full h-10' />
+                <img src={image4} alt='profile' className='w-full h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             </div>
           </div>
           </div>
           <div className=' w-full text-center sm:w-1/3 '>
-            <h1>Welcome Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos optio molestias omnis repudiandae doloribus corporis tenetur aliquam consequatur veniam quas quaerat deleniti laudantium recusandae aut, quis non cupiditate animi!</h1>
+            <h1>Welcome to Play and Chat! Connect, explore, and enjoy chatting.</h1>
           </div>
-          <button className='bg-black text-white p-2 text-4xl w-30 h-30 rounded hover:bg-slate-700'> <MdNotStarted />
-          </button>
+       
         </div>
       </div>
     

@@ -2,11 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap');
-* {
-  font-family: 'Edu AU VIC WA NT Guides';
- }
- h1 {
-  font-family: 'Edu AU VIC WA NT Guides' !important;
- 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+
+ *{
+  font-family: 'Orbitron', sans-serif;}
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded {
+  border-radius: 0.375rem; /* Tailwind's default rounded */
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-gray-300 {
+  color: #D1D5DB; /* Tailwind's gray-300 */
+}
+
+.text-red-500 {
+  color: #F56565; /* Tailwind's red-500 */
+}
+.border-animation {
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.border-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.border-animation:hover::before {
+  border-color: blue;
 }
