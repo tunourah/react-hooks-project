@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { FaTimes, FaMinus, FaCog } from "react-icons/fa";
-import { FiSend, FiImage } from "react-icons/fi";
+ import { FiSend, FiImage } from "react-icons/fi";
 import { PiUserRectangleDuotone } from "react-icons/pi";
-import { Link } from "react-router-dom";  
-import ConfirmationModal from "../components/ConfirmationModal"; 
-import TicTacToeSection from "../components/TicTacToeSection";
-
+ import TicTacToeSection from "../components/TicTacToeSection";
+import { Link } from "react-router-dom";
 const Chat = ({ chat1Name, chat2Name }) => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
@@ -29,6 +26,11 @@ const Chat = ({ chat1Name, chat2Name }) => {
       ]);
     }
   };
+ 
+ 
+
+  
+
    
   return (
     <div className=' h-secreen w-screen border-8 sm:overflow-hidden sm:h-full  border-primary'>
@@ -38,17 +40,16 @@ const Chat = ({ chat1Name, chat2Name }) => {
       {/* Log Out Button */}
       <div>
       <div className="relative mb-4 sm:absolute sm:top-10 sm:right-10">
-        <Link to="/login">
+        <Link to="/">
         <button
           className="bg-red-500 text-white p-2 rounded"
-          
+    
         >
           Log Out
         </button>
         </Link>
       </div>
-
-     
+ 
     </div>
 
       {/* Chat 1 */}
@@ -61,53 +62,54 @@ const Chat = ({ chat1Name, chat2Name }) => {
               {chat1Name}
             </h1>
           </div>
+{/* Messages Section */}
+<div className="flex-grow overflow-y-auto overflow-x-hidden p-4 bg-white">
+  {messages.map((message, index) => (
+    <div
+      key={index}
+      className={`p-2 rounded mb-2 shadow-sm ${
+        message.sender === "chat1"
+          ? "bg-blue-100 self-end text-right max-w-xs"
+          : "bg-gray-100 self-start text-left max-w-xs"
+      }`}
+    >
+      <div
+         
+        dangerouslySetInnerHTML={{ __html: message.text.replace(/\n/g, "<br>") }}
+      />
+      <div className="text-xs text-gray-500">{message.time}</div>
+    </div>
+  ))}
+</div>
 
-          {/* Messages Section */}
-          <div className="flex-grow overflow-y-auto p-4 bg-white">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`p-2 rounded mb-2 shadow-sm ${
-                  message.sender === "chat1"
-                    ? "bg-blue-100 self-end text-right max-w-xs"
-                    : "bg-gray-100 self-start text-left max-w-xs"
-                }`}
-              >
-                <div>
-                  {typeof message.text === "string" ? message.text : message.text}
-                </div>
-                <div className="text-xs text-gray-500">{message.time}</div>
-              </div>
-            ))}
-          </div>
 
           {/* Input Section for Chat 1 */}
           <div className="flex items-center p-4 bg-gray-50 border-t">
-            <textarea
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  if (inputText.trim()) {
-                    setMessages((prevMessages) => [
-                      ...prevMessages,
-                      {
-                        text: inputText,
-                        sender: "chat1",
-                        time: new Date().toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        }),
-                      },
-                    ]);
-                    setInputText("");
-                  }
-                }
-              }}
-              className="flex-grow border border-black rounded p-2 mr-2 resize-none"
-              rows={2}
-            />
+          <textarea
+  value={inputText}
+  onChange={(e) => setInputText(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (inputText.trim()) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          {
+            text: inputText,
+            sender: "chat1",
+            time: new Date().toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+          },
+        ]);
+        setInputText("");
+      }
+    }
+  }}
+  className="flex-grow border border-black rounded p-2 mr-2 resize-none"
+  rows={2}
+/>
 
             {/* Upload Photo Button */}
             <button className="bg-gray-100 text-black p-2 mr-2 flex items-center">
@@ -168,24 +170,25 @@ const Chat = ({ chat1Name, chat2Name }) => {
             </h1>
           </div>
 
-          {/* Messages Section */}
-          <div className="flex-grow overflow-y-auto p-4 bg-white">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`p-2 rounded mb-2 shadow-sm ${
-                  message.sender === "chat2"
-                    ? "bg-blue-100 self-end text-right max-w-xs"
-                    : "bg-gray-100 self-start text-left max-w-xs"
-                }`}
-              >
-                <div>
-                  {typeof message.text === "string" ? message.text : message.text}
-                </div>
-                <div className="text-xs text-gray-500">{message.time}</div>
-              </div>
-            ))}
-          </div>
+    {/* Messages Section */}
+<div className="flex-grow overflow-y-auto overflow-x-hidden p-4 bg-white">
+  {messages.map((message, index) => (
+    <div
+      key={index}
+      className={`p-2 rounded mb-2 shadow-sm ${
+        message.sender === "chat1"
+          ? "bg-blue-100 self-end text-right max-w-xs"
+          : "bg-gray-100 self-start text-left max-w-xs"
+      }`}
+    >
+      <div
+         
+        dangerouslySetInnerHTML={{ __html: message.text.replace(/\n/g, "<br>") }}
+      />
+      <div className="text-xs text-gray-500">{message.time}</div>
+    </div>
+  ))}
+</div>
 
           {/* Input Section for Chat 2 */}
           <div className="flex items-center p-4 bg-gray-50 border-t">

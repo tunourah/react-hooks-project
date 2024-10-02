@@ -49,7 +49,7 @@ const Login = ({ onSetNames }) => {
         </div>
 
         {error && <p className="text-red-500">{error}</p>}
-<Link  to="/chat">
+ 
         <button
           onClick={handleSubmit}
           className={`${
@@ -60,7 +60,7 @@ const Login = ({ onSetNames }) => {
       Start    <MdNotStarted/> 
         </button>
   
-        </Link>
+ 
       </div>
   <div className=" h-full   mx-16  sm:m-64 sm:w-full">
       <Header/>

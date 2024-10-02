@@ -4,13 +4,35 @@ const TicTacToeSection = ({ playerX, playerO }) => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
 
+  // Helper function to calculate the winner
+  const calculateWinner = (board) => {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    for (let line of lines) {
+      const [a, b, c] = line;
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        return board[a]; // Return "X" or "O"
+      }
+    }
+    return null;
+  };
+
   const winner = calculateWinner(board);
   const currentPlayer = isXNext ? playerX : playerO;
   const isBoardFull = board.every((cell) => cell !== null);
 
   const handleClick = (index) => {
     if (board[index] || winner) return; // Prevent changing if there's already a value or a winner
-    const newBoard = board.slice();
+    const newBoard = [...board];
     newBoard[index] = isXNext ? "X" : "O";
     setBoard(newBoard);
     setIsXNext(!isXNext);
@@ -82,28 +104,6 @@ const TicTacToeSection = ({ playerX, playerO }) => {
       </div>
     </div>
   );
-};
-
-// Helper function to calculate the winner
-const calculateWinner = (board) => {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-
-  for (let line of lines) {
-    const [a, b, c] = line;
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      return board[a]; // Return "X" or "O"
-    }
-  }
-  return null;
 };
 
 export default TicTacToeSection;
