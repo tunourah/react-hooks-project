@@ -9,10 +9,10 @@ import { MdNotStarted } from "react-icons/md";
 const Header = () => {
   return (
     <div>
-      <div className='flex flex-col border-2 border-black sm:justify-between    sm:items-stretch sm:flex-row justify-center items-center   p-5 gap-4 w-full' >
+      <div className='flex flex-col  sm:justify-between    sm:items-stretch sm:flex-row justify-center items-center   p-5 gap-4 w-full' >
         <div>
-          <h1>Play and Chat</h1>
-          <p>By Nora Altuwaim</p>
+          <h1 className='font-bold'>Play and Chat</h1>
+         
         </div>
         <div className='flex justify-center items-center sm:items-start gap-4 transition-all duration-300 ' >
             {/* left */}
@@ -31,9 +31,7 @@ const Header = () => {
             </div>
           </div>
           </div>
-          <div className=' w-full text-center sm:w-1/3 '>
-            <h1>Welcome to Play and Chat! Connect, explore, and enjoy chatting.</h1>
-          </div>
+         
        
         </div>
       </div>

@@ -24,9 +24,10 @@ const Login = ({ onSetNames }) => {
       <div className='border-4 border-secondary rounded-lg'>
     <div className="flex flex-col  justify-between  gap-2 items-center mx-auto mt-8">
        
-      <h1 className="mt-2 m-5 text-4xl text-center">
-      Welcome to our platform! Start chatting with ease
+      <h1 className="mt-2 m-5 text-4xl text-center font-thin">
+      Welcome to our platform!  
       </h1>
+      <h1  className=" text-2xl text-center font-thin">Start chatting with ease</h1>
       <div className="flex flex-col items-center mx-auto mt-8 gap-4 p-5 border-2 border-black  border-double h-1/2  bg-custom">
         <h3 className="mt-2 m-5">Enter Names</h3>
 
