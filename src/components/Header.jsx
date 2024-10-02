@@ -22,11 +22,11 @@ const Header = () => {
           </div>
           {/* right */}
           <div>
-            <div className='flex gap-1 w-full'>
+            <div className='flex gap-2 w-full'>
             <img src={image2} alt='profile' className='w-20 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             <img src={image3} alt='profile' className='w-20 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             </div>
-            <div>
+            <div className='mt-2'>
                 <img src={image4} alt='profile' className='w-40 h-10 transition-all duration-300 hover:w-24 hover:h-12' />
             </div>
           </div>
