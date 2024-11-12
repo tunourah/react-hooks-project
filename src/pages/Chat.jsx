@@ -53,7 +53,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
     </div>
 
       {/* Chat 1 */}
-      <div className="flex flex-col h-full w-full max-w-xs max-h-full sm:max-w-lg sm:mt-36 mx-auto">
+      <div className="flex flex-col h-full w-full sm:w-80 max-w-xs max-h-full sm:max-w-lg sm:mt-36 mx-auto">
         <div className="border-2 border-black h-3/4 flex flex-col">
           {/* Header with Chat 1 Name */}
           <div className="flex justify-between items-center p-3 bg-gray-100 border-b">
@@ -112,7 +112,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
 />
 
             {/* Upload Photo Button */}
-            <button className="bg-gray-100 text-black p-2 mr-2 flex items-center">
+            {/* <button className="bg-gray-100 text-black p-2 mr-2 flex items-center">
               <label
                 htmlFor="upload-photo1"
                 className="cursor-pointer flex items-center"
@@ -126,7 +126,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
                 className="hidden"
                 onChange={(e) => handlePhotoUpload(e, "chat1")}
               />
-            </button>
+            </button> */}
 
             {/* Send Message Button */}
             <button
@@ -160,7 +160,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
       </div>
 
       {/* Chat 2 */}
-      <div className="flex flex-col h-full w-full max-w-xs  sm:mt-36 sm:max-w-lg mx-auto">
+      <div className="flex flex-col h-full w-full sm:w-80   max-w-xs  sm:mt-36 sm:max-w-lg mx-auto">
         <div className="border-2 border-black h-3/4 flex flex-col">
           {/* Header with Chat 2 Name */}
           <div className="flex justify-between items-center p-3 bg-gray-100 border-b">
@@ -219,7 +219,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
             />
 
             {/* Upload Photo Button */}
-            <button className="bg-gray-100 text-black p-2 mr-2 flex items-center">
+            {/* <button className="bg-gray-100 text-black p-2 mr-2 flex items-center">
               <label
                 htmlFor="upload-photo2"
                 className="cursor-pointer flex items-center"
@@ -233,7 +233,7 @@ const Chat = ({ chat1Name, chat2Name }) => {
                 className="hidden"
                 onChange={(e) => handlePhotoUpload(e, "chat2")}
               />
-            </button>
+            </button> */}
 
             {/* Send Message Button */}
             <button
