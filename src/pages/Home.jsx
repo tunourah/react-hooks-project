@@ -1,9 +1,9 @@
  
 import React, { useState } from "react";
-import Header from "./components/Header";  
-import MainContainer from "./components/MainContainer";  
+import Header from "../components/Header";  
+import MainContainer from "../components/MainContainer";  
 
-const App = () => {
+const Home = () => {
   const [names, setNames] = useState({ chat1: "", chat2: "" });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -24,4 +24,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

@@ -9,7 +9,7 @@ import { MdNotStarted } from "react-icons/md";
 const Header = () => {
   return (
     <div>
-      <div className='flex flex-col  sm:justify-between    sm:items-stretch sm:flex-row justify-center items-center   p-5 gap-4 w-full' >
+      <div className='flex flex-col  sm:justify-between  h-full   sm:items-stretch sm:flex-row justify-center items-center   p-5 gap-4 w-full' >
         <div>
           <h1 className='font-bold'>Play and Chat</h1>
          

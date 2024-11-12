@@ -5,6 +5,7 @@ import Chat from '../pages/Chat'
 import Login from '../pages/Login'
 import ErrorPage from '../pages/ErrorPage'
 import MainContainer from '../components/MainContainer'
+import Home from '../pages/Home'
 const Router = createBrowserRouter([
     {
       path: "/",
@@ -22,6 +23,10 @@ const Router = createBrowserRouter([
     {
         path: "/MainContainer",
         element: <MainContainer />,
+    },
+    {
+      path:"/Home",
+      element: <Home />,
     }
     
   ]);
